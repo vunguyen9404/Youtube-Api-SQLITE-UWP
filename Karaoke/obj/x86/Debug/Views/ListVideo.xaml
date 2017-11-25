@@ -1,0 +1,40 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Karaoke.Views.ListVideo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Karaoke.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Karaoke.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Title="Personal">
+            <PivotItem Header="Video Like">
+                <GridView x:ConnectionId='2'                                   IsItemClickEnabled="True"                               >
+                    <GridView.ItemTemplate>
+                        <DataTemplate                        >
+                            <Grid x:ConnectionId='3' Width="250" Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Image x:ConnectionId='4'                       Width="250" VerticalAlignment="Top" Grid.Row="0"/>
+                                <TextBlock x:ConnectionId='5'                       FontWeight="Medium" TextWrapping="WrapWholeWords" Margin="0, 10" Grid.Row="1" MaxHeight="50" MinHeight="50"/>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0, 10">
+                                    <Button x:ConnectionId='6' Content="" Name="Dislike"                                         ToolTipService.ToolTip="Dislike video" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Margin="10" Background="Transparent" />
+                                    <Button Content="" ToolTipService.ToolTip="Add to Playlist" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Margin="10" Background="Transparent" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </PivotItem>
+            <PivotItem Header="Playlist Video">
+                
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
+
